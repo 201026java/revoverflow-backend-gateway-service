@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: RevOverflow-GatewayService
+  main:    allow-bean-definition-overriding: true
   cloud:
     gateway:
       default-filters:
@@ -27,4 +28,12 @@ spring:
         uri: lb://RevOverflow-AnswerService
         predicates:
         - Path=/answer/**
+#Logging
+#logging:
+#  level:
+#    root: INFO
+#    org.springframework.web: DEBUG
+#   org.springframework.security: DEBUG
+#   org.springframework.web.HttpLogging: DEBUG
+#    org.springframework.cloud.gateway: DEBUG
         
