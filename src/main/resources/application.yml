@@ -17,11 +17,11 @@ spring:
             - PUT
             allowedHeaders: "*"
       default-filters:
-        - PrefixPath=/
-        - name: CircuitBreaker
-          args:
-            name: default-fallback
-            fallbackUri: forward:/fallback
+      - PrefixPath=/
+      - name: CircuitBreaker
+        args:
+          name: default-fallback
+          fallbackUri: forward:/fallback
       routes:
         # =========================
         - id: RevOverflow-UserService
